@@ -1,13 +1,13 @@
 <?php
 $timeThen = microtime( true );
 
-$aceVersion = '0.6.7';
+$aceVersion = '0.6.7.1A';
 
 $rpcHost = '127.0.0.1';
-$rpcPort = 12345;
-$rpcUser = 'username';
-$rpcPass = 'password';
-$coinName = 'Somecoin';
+$rpcPort = 19965;
+$rpcUser = 'coinusername';
+$rpcPass = 'coinpassword';
+$coinName = 'FooCoin';
 $coinHome = 'http://www.somecoin.org/';
 $coinPoS = false;
 $numBlocksPerPage = 12;
@@ -122,7 +122,7 @@ else // list of blocks
         $hash = $rpc->getblockhash( $i );
         $hashShort = substr( $hash, 0, 16 );
         $block = $rpc->getblock( $hash );
-        $diff = round( $block['difficulty'], 4, PHP_ROUND_HALF_DOWN );
+        $diff = round( $block['difficulty'], 8, PHP_ROUND_HALF_DOWN );
         $time = gmdate( 'H:i:s d-M-Y', $block['time'] );
 
         $txCount = 0;
